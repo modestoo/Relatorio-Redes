@@ -20,3 +20,5 @@
 *.toc
 *.idx
 *.gz
+*.ilg
+*.ind	
