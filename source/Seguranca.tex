@@ -1,14 +1,31 @@
 \chapter{Segurança dos Dados}
 \label{chap:Seguranca}
-	
-	Nesta seção serão abordados tópicos ....
 
-	TO DO.
+	Está seção tem como foco fazer uma introdução dos ataques que comprometem a segurança da rede. Por meio desses estudos, alguns ataques serão selecionados e simulados com o intuito de testar a confiabilidade da arquitetura montada em cima de um IDS.
 
 	\section{Principais Ataques a uma Rede}
 	\label{sec:Seguranca_PA}
 
-		TO DO.
+		Um ataque estabelecido a um rede pode ser entendido por uma ação que consegue ultrapassar a segurança de um sistema com objetivo de coletar, corromper informações. Segundo \cite{Verissimo} apud \cite{Morais} os ataques são divididos em manuais e automáticos, em um ataque manual a vítima é escolhida previamente e de acordo com as informações que se pretende obter uma forma de ataque é selecionada. Os ataques automáticos são disparados por scripts e softwares que podem atingir diversos alvos. 
+
+
+		Atualmente existem diversos tipos de ataques cada um com seus objetivos e procederes de como realizá-los. A lista a seguir contém os ataques mais comuns segundo \cite{Morais}
+
+		\begin{itemize}
+			\item  \textbf{DOS - Denial of service} Tem  como objetivo principal esgotar os recursos de uma máquina.
+				\begin{itemize}
+					\item \textbf{SYN flooding} - Consiste no envio de múltiplos pacotes SYN para a vítima. Com isso o computador que recebe esse ataque irá responder com pacotes SYN-ACK para o IP de origem, e reenviar esses pacotes novamente uma vez que não foram respondidos. O alvo irá redirecionar seus recursos para atender a essas tentativas de conexões, negando assim, recursos para as aplicações legítimas.  
+					\item \textbf{Ping Attack} - Pacotes ICMP são enviados repentinamente, a um fluxo superior ao normal. O TCP colocará esses pacotes na pilha fazendo com que o servidor fique inundado.
+					\item \textbf{Flood Attack} - É um envio de trafego muito superior ao que o computador de destino consegue processar.
+					\item \textbf{Teardrop Attack} - Pacotes corrompidos por meio de fragmentação são enviados para a vítima, fazendo com que ela deixe de responder.
+					\item \textbf{Vírus} - São programas mal intencionados que modificam e corrompem ficheiros.
+					\item \textbf{Exploit} - Tem como objetivo obter o controle de um sistema ao aproveitar-se de uma vulnerabilidade encontrada em um sistema alvo.
+				\end{itemize}
+
+			\item \textbf{BackDoor} - É caracterizado pelo acesso a um sistema ultrapassando suas verificações de segurança. Quando esses pontos podem ser usados para invadir o sistema.
+			\item \textbf{Password Guessing Attack} - O atacante tenta acessar uma rede ou computador repetidas vezes tentando adivinhar nomes de usuários do sistema.
+		\end{itemize}
+
 
 	\section{Impactos dos Ataques a uma Rede}
 	\label{sec:Seguranca_Impactos}
