@@ -37,5 +37,13 @@
 	\label{sec:IDS_Ferramentas}
 	
 
-		TO DO.
+		Foi realizado um estudo das ferramentas IDS/IPS presentes no mercado. Entre as ferramentas pesquisadas estão:
 
+			\begin{itemize}
+				\item \textbf{Snort} - É uma ferramente de detecção de intrusos na rede, ele é um \textit{sniffer} baseado no pacote libpcap \cite{Martin}. É amplamente utilizado por ser flexível em suas configurações de regras e por seu grande número de possibilidades de tratamento dos alertas gerados. 
+				\item \textbf{Suricata} - Outra ferramenta de detecção de intrusos na rede baseada em assinaturas. Tem suporte nativo a operações \textit{multithread}, o que é sua principal vantagem em relação ao Snort \cite{Albin}. 
+				\item \textbf{Bro NIDS} - Um NIDS baseado em anomalias na rede. Geralmente utilizado para conduzir investigações forense.
+				\item \textbf{Security Onion} - É uma distribuição Linux baseada no Ubuntu que provê o monitoramento e segurança da rede. Ela possui um série de ferramentas configuradas, entre elas está o Snort, Suricata, Snorby.  
+			\end{itemize}
+
+		A ferramenta que melhor atende os critérios do projeto é a Security Onion, por já possuir um arsenal de ferramentas configuradas e por ser de fácil instalação.
