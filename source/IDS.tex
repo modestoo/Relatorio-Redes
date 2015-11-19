@@ -7,19 +7,17 @@
 
 	Neste contexto, surge no início dos anos 80 os primeiros conceitos de métodos de detecção de instruções no qual ganha espaço ao longo dos anos seguintes.
 
-	Podemos definir que um IDS (\textit{(Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar tais intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Ferramentas IDS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos.\textbf{(COLOCAR REFERENCIA AQUI - ALEXANDRE LENKE E VAGNER SANTOS)}
+	Podemos definir que um IDS (\textit{(Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar tais intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Ferramentas IDS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos \cite{Comunidade Snort Brasil}.
 
 	\section{Tipos de IDS}
 	\label{sec:IDS_Tipos}
 
-	As ferramentas de IDS existentes possuem implementação baseada em características funcionais que permitem a classificação destes mecanismos de detecção de intrusão de acordo com tais funcionalidades. Assim, de acordo com Morais (2011), \textbf{(FAZER REFERENCIA CORRETA - GUILHERME MORAIS - LISBOA)}, os tipos de IDS existentes podem ser classificados, dentre outras características, por:
-	\begin{list}{}{}
-	\item \textbf{Fonte de Eventos:} podem detectar intrusos com referência aos padrões determinados para pacotes tramitados na rede (\textit{network based}) ou através do monitoramento de diversas variáveis de um \textit{host}, tais como uso de software ou hardware (\textit{host based}).
+	As ferramentas de IDS existentes possuem implementação baseada em características funcionais que permitem a classificação destes mecanismos de detecção de intrusão de acordo com tais funcionalidades. Assim, de acordo com Morais (2011), os tipos de IDS existentes podem ser classificados, dentre outras características, por:
+		\begin{itemize}
+			\item \textbf{Fonte de Eventos} - podem detectar intrusos com referência aos padrões determinados para pacotes tramitados na rede (\textit{network based}) ou através do monitoramento de diversas variáveis de um \textit{host}, tais como uso de software ou hardware (\textit{host based}).
 	
-	\item \textbf{Método de detecção:} pode ser realizada com base em conhecimento de assinaturas, padrões de ataques já conhecidos. Ainda pode ser baseada em comportamento, permitindo que ataques desconhecidos sejam detectados, uma vez que comportamentos anormais podem representar que um intruso está prestes a atacar o sistema.	
+			\item \textbf{Método de detecção} - pode ser realizada com base em conhecimento de assinaturas, padrões de ataques já conhecidos. Ainda pode ser baseada em comportamento, permitindo que ataques desconhecidos sejam detectados, uma vez que comportamentos anormais podem representar que um intruso está prestes a atacar o sistema.	
 	\end{list}
-
-		TO DO.
 
 	\section{Relação IDS e Firewall}
 	\label{sec:IDS_Firewall}
@@ -29,9 +27,10 @@
 	\section{Vantagens e Limitações do IDS}
 	\label{sec:IDS_VeL}
 
-		TO DO. VANTAGENS
+	As ferramentas de detecção de intrusos apresentam vantagens e limitações a depender do tipo de implementação da mesma. Os detectores de intrusos implementados em uma rede, que é o foco do presente trabalho, são capazes de serem invisíveis aos atacantes e monitorar uma rede de grande porte quando implantado no local adequado da rede e configurado com regras eficientes para que ações corretas sejam realizadas em reação aos ataques previstos \cite{Comunidade Snort Brasil}.
+	A implementação de ferramentas IDS em \textit{host} apresenta como vantagem a identificação de ataques que não podem ser detectados a nível de rede, uma vez que pacotes que são trafegados pela rede podem ser criptografados, mascarando um ataque. Exemplos de ataques que podem ocorrer a um \textit{host} e que pode não ser identificado por um IDS implementado na rede são aqueles realizados por \textit{Trojan Horses}, já que tais ameaças apresentam-se como parte de um tráfego de dados qualquer que é trocado entre \textit{hosts} \cite{Comunidade Snort Brasil}.
 		
-	Qualquer sistema IDS apresenta limitações que pode afetar a infra-estrutura da rede onde estão implantadas. Desta forma, a estrutura da rede e recursos limitados podem se tornar um obstáculo ao uso de todos os poderes da ferramenta de IDS que, caso não seja configurada adequadamente, está fadada a exposição à possíveis ataques do tipo DoS (\textit{Deny of Service}). Estas limitações, dentro de uma rede organizacional onde dados confidenciais estão armazenados e são tramitados pela rede, podem facilitar um ataque capaz de gerar falsos positivos que exigem esforços enormes para serem identificados \textbf{(FAZER REFERENCIA CORRETA - GUILHERME MORAIS - LISBOA)}.
+	Qualquer sistema IDS apresenta limitações que pode afetar a infra-estrutura da rede onde estão implantadas. Desta forma, a estrutura da rede e recursos limitados podem se tornar um obstáculo ao uso de todos os poderes da ferramenta de IDS que, caso não seja configurada adequadamente, está fadada a exposição à possíveis ataques do tipo DoS (\textit{Deny of Service}). Estas limitações, dentro de uma rede organizacional onde dados confidenciais estão armazenados e são tramitados pela rede, podem facilitar um ataque capaz de gerar falsos positivos que exigem esforços enormes para serem identificados \cite{Morais}.
 
 	\section{Levantamento das Ferramentas IDS}
 	\label{sec:IDS_Ferramentas}
