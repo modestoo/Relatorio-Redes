@@ -18,7 +18,7 @@
 	\end{itemize}
 
 	\section{Geração de Ruído com Ping}
-	\label{sec:Geracaoo de Ruido com Ping}
+	\label{sec:Geracao_de_Ruido_com_Ping}
 	Nesta geração de ruído, foi feito a partir do host atacante com ip 192.168.0.16
 	utilizando o comando ping ipDaVitima. O comando utilizado pode ser visto na
 	figura \ref{fig:ping_atacante} a seguir.
@@ -93,7 +93,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 	 ET SCAN Potential VNC Scan.
 
 	 \section{Geração de Ruído com FootPrint}
-	 \label{sec:Geração de Ruído com FootPrint}
+	 \label{sec:Geracao_de_Ruido_com_FootPrint}
 	 Esta geração de ruído consiste em um Port Scan Utilizado para identificar quais
 	 portas estão abertas em um determinado IP, além de visualizar quais os serviços
 	 que estão sendo providos e a versão.
@@ -154,7 +154,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
   \end{figure}
 
 	\section{Flood Attack}
-	\label{sec:Flood Attack}
+	\label{sec:Flood_Attack}
 	Este ataque foi utilizado enviando vários pacotes na maior velocidade possível.
 	Para tal, foi utilizada a ferramenta hping3 com o seguinte comando:
 
@@ -184,7 +184,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
   \end{figure}
 
 \section{Brute Force SSH}
-\label{sec:Brute Force SSH}
+\label{sec:Brute_Force_SSH}
 	Os ataques citados até agora testaram apenas o serviço IDS do sistema, este agora
 	será responsável por testar o serviço IPS ao perceber que o atacante está com más
 	intenções para com a vítima atacante.
@@ -202,12 +202,12 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 	começou a identificar os pacotes maliciosos, vistos na figura \ref{fig:ssh_vitima}.
 
 	\begin{figure}[h]
-	\centering
-	\includegraphics[width=400px, scale=1]{resource/ssh_vitima}
-	\caption{Vítima - Detecção do Ataque brute force SSH}
- \label{fig:ssh_vitima}
- \end{figure}
-
+		\centering
+		\includegraphics[width=400px, scale=1]{resource/ssh_vitima}
+		\caption{Vítima - Detecção do Ataque brute force SSH}
+		\label{fig:ssh_vitima}
+	\end{figure}
+	\newpage
  	Quando o servidor percebeu que se tratava de um ataque brute force, este bloqueou
 	o tráfico advindo do atacante e o hydra ficou travado. Exemplificando o serviço
 	do IPS disponível no Security Onion.

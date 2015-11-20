@@ -7,7 +7,7 @@
 
 	Neste contexto, surge no início dos anos 80 os primeiros conceitos de métodos de detecção de instruções no qual ganha espaço ao longo dos anos seguintes.
 
-	Podemos definir que um IDS (\textit{(Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar tais intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Ferramentas IDS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos \cite{Comunidade_Snort_Brasil}.
+	Podemos definir que um IDS (\textit{Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar tais intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Ferramentas IDS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos \cite{Comunidade_Snort_Brasil}.
 
 	\section{Tipos de IDS}
 	\label{sec:IDS_Tipos}
@@ -41,8 +41,10 @@
 			\begin{itemize}
 				\item \textbf{Snort} - É uma ferramente de detecção de intrusos na rede, ele é um \textit{sniffer} baseado no pacote libpcap \cite{Martin}. É amplamente utilizado por ser flexível em suas configurações de regras e por seu grande número de possibilidades de tratamento dos alertas gerados. 
 				\item \textbf{Suricata} - Outra ferramenta de detecção de intrusos na rede baseada em assinaturas. Tem suporte nativo a operações \textit{multithread}, o que é sua principal vantagem em relação ao Snort \cite{Albin}. 
+				\item \textbf{Snorby} - É uma ferramenta no qual auxilia Snort em suas funcionalidades, isto é, ela disponibiliza alguns gráficos e estátisticas dos alertas coletados pelo Snort. Além disso, possui uma interface simples e de fácil utilização. 
 				\item \textbf{Bro NIDS} - Um NIDS baseado em anomalias na rede. Geralmente utilizado para conduzir investigações forense.
-				\item \textbf{Security Onion} - É uma distribuição Linux baseada no Ubuntu que provê o monitoramento e segurança da rede. Ela possui um série de ferramentas configuradas, entre elas está o Snort, Suricata, Snorby.  
+				\item \textbf{Smoorth} - É a união de três grandes ferramentas de IPS/IDS, Snort, Suricata e Barnyard2. Sendo uma ferramenta muito poderosa, no entanto, possui um pequeno grau de complexidade para usuário iniciantes da ferramenta.
 			\end{itemize}
 
-		A ferramenta que melhor atende os critérios do projeto é a Security Onion, por já possuir um arsenal de ferramentas configuradas e por ser de fácil instalação.
+		
+		Dentre as ferramentas levantadas, a que melhor atendeu aos critérios do projeto, tais como, fácil instalação, fácil utilização, apresentação de gráficos e análise estátistica foi a combinação Snort + Snorby. Elas possuem funcionalidades muito úteis para monitoramento de redes, sendo minimamente essenciais para segurança de dados.
