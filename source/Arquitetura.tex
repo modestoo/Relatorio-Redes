@@ -1,7 +1,7 @@
 \chapter{Arquitetura Estabelecida}
 \label{chap:Arquitetura}
-	
-	Está seção tem como foco detalhar a infraestrutura, isto é, a arquitetura física e lógica estabelecida para desenvolvimento deste projeto. Aqui serão apresentados os componentes da redes e seus especificações técnicas, além de indicar informações de como replicar o ambiente de teste definido. 
+
+	Está seção tem como foco detalhar a infraestrutura, isto é, a arquitetura física e lógica estabelecida para desenvolvimento deste projeto. Aqui serão apresentados os componentes da redes e seus especificações técnicas, além de indicar informações de como replicar o ambiente de teste definido.
 
 	\section{Componentes da Arquitetura}
 	\label{sec:Arquitetura_Componentes}
@@ -9,7 +9,7 @@
 		Para montar a infraestrutura necessário para o projeto, utilizou-se de 4 componentes. Cada componente com um papel e serviço específico. Além disso, metade deles são máquina virtuais instânciadas pelo software \emph{VMware}. A seguir, são elencados os componentes e suas respectivas caracteristicas:
 
 		\begin{itemize}
-			\item \textbf{Cliente Comum} - IP: \emph{192.168.0.12} - Trata-se da máquina que fará as requisições de aplicações ao servidor principais da rede. Nenhuma ferramenta específica para será utilizada nela, apenas um navegador para as solicitações das requisições. 
+			\item \textbf{Cliente Comum} - IP: \emph{192.168.0.12} - Trata-se da máquina que fará as requisições de aplicações ao servidor principais da rede. Nenhuma ferramenta específica para será utilizada nela, apenas um navegador para as solicitações das requisições.
 
 			\textbf{- Características:} \\
 			\textbf{Sistemas Operacional:} Linux Mint 17.2 - 64 bits; \\
@@ -19,7 +19,7 @@
 			\textbf{Adaptador de Rede:} Wi-Fi; \\
 			\textbf{Ferramentas Instaladas:} Google Chrome V.46.0; \\
 			\textbf{É uma máquina virtual?} Sim; \\
-	
+
 			\item \textbf{Cliente Malicioso} - IP: \emph{192.168.0.13} - Trata-se da máquina que fará os ataques a rede. Neste caso, este componente sempre tentará atacar o servidor principal, tentando na maioria das vezes derruba-lo. Para esta máquinas utilizou-se um sistema operacional específico para auditorias e segurança de computadores \cite{kali}. Todas as ferramentas utilizadas para os ataques são nativas ao sistema operacional.
 
 			\textbf{- Características:} \\
@@ -41,8 +41,8 @@
 			\textbf{Adaptador de Rede:} Wi-Fi; \\
 			\textbf{Ferramentas Instaladas:} Snort e Snorby; \\
 			\textbf{É uma máquina virtual?} Não; \\
-	
-			\item \textbf{Servidor Principal} - IP: \emph{192.168.0.17} - Trata-se de um servidor com alguns serviços FTP, SSH, TCP entre outros. Também foi utilizado um sistema operacional específico para este componente. Neste caso, a máquina é intencionalmente vulnerável, comumente utilizada para testes de segurança em redes como técnicas de intrusão por exemplo \cite{metasploitable2}. 
+
+			\item \textbf{Servidor Principal} - IP: \emph{192.168.0.17} - Trata-se de um servidor com alguns serviços FTP, SSH, TCP entre outros. Também foi utilizado um sistema operacional específico para este componente. Neste caso, a máquina é intencionalmente vulnerável, comumente utilizada para testes de segurança em redes como técnicas de intrusão por exemplo \cite{metasploitable2}.
 
 			\textbf{- Características:} \\
 			\textbf{Sistemas Operacional:} Metasploitable2 2.0 - 64 bits; \\
@@ -52,7 +52,7 @@
 			\textbf{Adaptador de Rede:} Wi-Fi; \\
 			\textbf{Ferramentas Instaladas:} Apache, vsftpd, Open SSH; \\
 			\textbf{É uma máquina virtual?} Sim; \\
-	
+
 		\end{itemize}
 
 
@@ -70,7 +70,7 @@
 
 		Percebe a configuração de uma topologia estrela, neste caso, 4 componentes são interligados através de comutador central. Nesta configuração de rede, todas as informações enviada de um nó para outro passa primeiramente pelo elemento central (comutador) antes de chegar a outro nó, portanto, as informações não passam de um host para o outro diretamente. \cite{Tanenbaum}
 
-		Uma das principais vantagens dessa topologia é a administração central, pois ocorrendo algum problema em uma das extremidades, a arquitetura não será totalmente comprometida mas, apenas no host com problema. Em contrapartida, qualquer problema no equipamento central, toda a arquitetura é paralisada. 
+		Uma das principais vantagens dessa topologia é a administração central, pois ocorrendo algum problema em uma das extremidades, a arquitetura não será totalmente comprometida mas, apenas no host com problema. Em contrapartida, qualquer problema no equipamento central, toda a arquitetura é paralisada.
 
 	\section{Instalação das Ferramentas}
 	\label{sec:Arquitetura_Componentes}
@@ -85,7 +85,7 @@
 			Nesta subseção são apresentados os sistemas operacionais utilizados para executar o projeto.
 
 			\begin{itemize}
-				
+
 				\item \textbf{Linux Mint} - Trata-se de uma distro do sistema operacional Linux, baseada nas distros Ubuntu e Debian. O Mint oferece muitas vantagens, uma de suas principais é a simplicidade e elegância visual voltado ao usuário final. \cite{mint}
 
 				Para efetuar o download, instalação e configuração utilizado-se a documentação base do sistema operacional. Disponível em:
@@ -94,7 +94,7 @@
 					\href{http://www.linuxmint.com/documentation.php}{http://www.linuxmint.com/documentation.php}
 				\end{framed}
 				\textbf{Fonte:} Official Linux Mint Documentation.
-				
+
 
 				\item \textbf{Kali Linux} - Trata-se de uma distro específica para auditorias e segurança de computadores. O Kali possui um arsenal de ferramentas que proporcionam diversas invasões, além de inúmeros ataques a redes. \cite{kali}
 
@@ -141,11 +141,11 @@
 
 
 			\begin{itemize}
-				
+
 				\item \textbf{Ping} - Trata-se do comando de teste para conectividade entre equipamento. É comumente nativo aos sistemas operacionais baseados no Unix.
 
 				A demostração da utilização desta ferramenta é abordada no capitulo \ref{chap:Simulacao} - \nameref{chap:Simulacao} - Tópico \ref{sec:Geracao_de_Ruido_com_Ping} - \nameref{sec:Geracao_de_Ruido_com_Ping}.
-				
+
 
 				\item \textbf{NMAP} - Trata-se de uma ferramenta para exploração de portas, isto é, scanner de portas. \cite{nmap}
 
@@ -167,7 +167,7 @@
 				A demostração da utilização desta ferramenta é abordada no capitulo \ref{chap:Simulacao} - \nameref{chap:Simulacao} - Tópico \ref{sec:Geracao_de_Ruido_com_FootPrint} - \nameref{sec:Geracao_de_Ruido_com_FootPrint}.
 
 
-				\item \textbf{HPING3} - Trata-se de uma ferramenta que encaminha pacotes TCP/IP personalizados. Para este projeto, a ferramenta foi utilizada para encaminhar vários pacotes SYN Flood. 
+				\item \textbf{HPING3} - Trata-se de uma ferramenta que encaminha pacotes TCP/IP personalizados. Para este projeto, a ferramenta foi utilizada para encaminhar vários pacotes SYN Flood.
 
 				Para efetuar a instalação, digita-se:
 				\begin{framed}
@@ -179,7 +179,7 @@
 				A demostração da utilização desta ferramenta é abordada no capitulo \ref{chap:Simulacao} - \nameref{chap:Simulacao} - Tópico \ref{sec:Flood_Attack} - \nameref{sec:Flood_Attack}.
 
 
-				\item \textbf{Hydra} - Trata-se de uma ferramenta clássica usada para quebrar senhas. Ele utilizado a técnica de força bruta para quebrar senhas. 
+				\item \textbf{Hydra} - Trata-se de uma ferramenta clássica usada para quebrar senhas. Ele utilizado a técnica de força bruta para quebrar senhas.
 
 				Para efetuar a instalação, digita-se:
 				\begin{framed}
@@ -189,7 +189,7 @@
 				A demostração da utilização desta ferramenta é abordada no capitulo \ref{chap:Simulacao} - \nameref{chap:Simulacao} - Tópico \ref{sec:Brute_Force_SSH} - \nameref{sec:Brute_Force_SSH}.
 
 
-				\item \textbf{Snort} - Trata-se de uma ferramenta de detecção de intrusão na rede(NIDS) flexível em suas configurações de regras. 
+				\item \textbf{Snort} - Trata-se de uma ferramenta de detecção de intrusão na rede(NIDS) flexível em suas configurações de regras.
 
 				Para utilização da ferramenta é necessário a instalação do MySQL, um dos bancos de dados mais populares. Para tanto, digita-se o comando:
 				\begin{framed}
@@ -197,7 +197,7 @@
 				\end{framed}
 
 				Para efetuar a configuração da ferramenta, utilizou-se o tutorial apresentado no link a seguir:
-				
+
 				\begin{framed}
 					\href{http://www.vivaolinux.com.br/artigo/Snort-MySQL-Guardian-Instalacao-e-configuracao?pagina=2}{http://www.vivaolinux.com.br/artigo/Snort-MySQL-Guardian-Instalacao-e-configuracao\?pagina=2}
 				\end{framed}
@@ -206,13 +206,13 @@
 				A demostração da utilização desta ferramenta é abordada durante o desenvolvimento do capitulo \ref{chap:Simulacao} - \nameref{chap:Simulacao}.
 
 
-				\item \textbf{Snorby} - Trata-se de uma ferramenta de frontends utilizados para visualizar os alertas gerados pela ferramenta Snort citada anteriormente. 
+				\item \textbf{Snorby} - Trata-se de uma ferramenta de frontends utilizados para visualizar os alertas gerados pela ferramenta Snort citada anteriormente.
 
 				Para utilização da ferramenta é necessário a instalação do MySQL além de outras ferramentas requisitos para o Snorny. Portanto, para efetuar a instalação e configuração, utilizou-se o tutorial apresentado no link a seguir:
-				
+
 				\begin{framed}
 					\href{http://www.vivaolinux.com.br/artigo/SAMSB-Snort-+-Apache2-+-MySQL-+-Snorby-e-BarnYard2-no-Debian?pagina=2}{http://www.vivaolinux.com.br/artigo/SAMSB-Snort-+-Apache2-+-MySQL-+-Snorby-e-BarnYard2-no-Debian\?pagina=2}
-				\end{framed}	
+				\end{framed}
 
 				\textbf{Fonte:} Viva o Linux.
 
@@ -223,6 +223,35 @@
 	\section{Limitações e Dificuldades}
 	\label{sec:Arquitetura_Limitacoes}
 
-		TO DO.
+		\subsection{Intalação das Ferramentas}
+			Para o desenvolvimento do trabalho de implementação do sistema IDS/IPS é
+			necessário instalar uma sequência de ferramentas que possibilitam a implantação
+			do sistema bem como o teste do mesmo. As principais ferramentas utilizadas
+			neste trabalho foram: Snort e Snorby. Ambas, apesar de muito comuns no mercado,
+			tem um processo de configuração muito particular do ambiente de utilização
+			da mesma. O grupo encontrou muitas dificuldades para configurar no ambiente
+			de teste, pois, a dinâmica de padronização era desconhecida.
 
-		
+		\subsection{Configuração das Ferramentas}
+			Estabelecer uma interface para a captura de pacotes também foi um implecílio
+			encontrado, pois o processo de configuração era manual e não se compreedia
+			como deveria ser procedido. Para a resolução do problema, foi utilizado o
+			sistema operacional Security Onion, que já possui todas as ferramentas
+			utilizadas no nosso trabalho com relação à segurança.
+
+		\subsection{Restrições Físicas}
+			Após configuradas as interfaces, observou-se que o Snort estava capturando
+			apenas os pacotes que utilizam a rede eth0 para trafegar. Porém, a rede de
+			simulação estava instalada longe do roteador, logo, todas as máquinas estavam
+			conectadas via wifi. Assim, fez-se necessário por parte do proprietário das
+			máquinas adquirir vinte metros de cabo ethernet a fim de interligar os
+			computadores pela inteface eth0.
+
+		\subsection{Execução dos Ataques}
+			A execução dos ataques foi um ponto complexo, pois, apesar se simples, exige
+			uma quantidade de conhecimento considerável para entender o processo que
+			estava sendo execudado no backend, a fim de testar as regras no sistema
+			de detecção e prevenção de intrusos.
+
+			Para testar as regras, era necessário conhecer sobre os dados trafegantes
+			ao identificar as recorrências.
