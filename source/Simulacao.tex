@@ -46,9 +46,9 @@ Foram enviados 19 pacotes com intervalo de aproximadamente um segundo entre cada
  \end{figure}
 
  A figura \ref{fig:ping_servidor} apresenta vários dados dos pacotes capturados.
- Neste caso, há o nível de periculosidade da regra identificada, a interface de rede
+ Neste caso, o nível de periculosidade da regra identificada, a interface de rede
  utilizada para a captura, no caso o Alpha eth0, endereços de IP de origem e destino,
- A mensagem transmitida pela regra, o pacote descrito em hexadecimal ou em
+ a mensagem transmitida pela regra, o pacote descrito em hexadecimal ou em
  Ascii, conforme a necessidade do usuário.
 
  A regra utilizada para capturar pacotes utilizado pela ferramenta ping
@@ -94,7 +94,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 
 	 \section{Geração de Ruído com FootPrint}
 	 \label{sec:Geracao_de_Ruido_com_FootPrint}
-	 Esta geração de ruído consiste em um Port Scan Utilizado para identificar quais
+	 Esta geração de ruído consiste em um Port Scan utilizado para identificar quais
 	 portas estão abertas em um determinado IP, além de visualizar quais os serviços
 	 que estão sendo providos e a versão.
 
@@ -127,7 +127,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
   \label{fig:vitima_log_port_scan}
   \end{figure}
 
-	O servidor Identificou uma série de portas e caracteríticas sendo analisadas na
+	O servidor identificou uma série de portas e caracteríticas sendo analisadas na
 	vítima, dentre elas:
 
 	\begin{itemize}
@@ -157,7 +157,7 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 	\section{Flood Attack}
 	\label{sec:Flood_Attack}
 	Este ataque foi utilizado enviando vários pacotes na maior velocidade possível.
-	Para tal, foi utilizada a ferramenta hping3 com o seguinte comando:
+	Para tanto, foi utilizada a ferramenta hping3 com o seguinte comando:
 
 \begin{framed}
 	hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source 192.168.0.18
@@ -174,8 +174,8 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
   \end{figure}
 
 	O servidor Snort por sua vez, detectou todos os ataque realizados. Ele identifica
-	o ataque retornando a mensagem: ET FROP Spamhaus DROP Listed Traffic Inbound. O
-	log dos pacotes por parte do server pode ser visto na figura \ref{fig:vitima_flood}.
+	o ataque retornando a mensagem: \emph{"ET FROP Spamhaus DROP Listed Traffic Inbound"}. O
+	log dos pacotes por parte do servidor pode ser visto na figura \ref{fig:vitima_flood}.
 
 	 \begin{figure}[h]
  	 \centering
@@ -188,19 +188,19 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 \label{sec:Brute_Force_SSH}
 	Os ataques citados até agora testaram apenas o serviço IDS do sistema, este agora
 	será responsável por testar o serviço IPS ao perceber que o atacante está com más
-	intenções para com a vítima atacante.
+	intenções para com a vítima atacada.
 
-	O ataque utilizou a ferramenta de força bruta hydra, a qual utiliza uma lista
-	de senhas para atacar um determinado servidor ssh com um determinado nome de
-	usuário ou uma lista deles. Neste caso, utilizamos o usuário root, na porta 22,
+	O ataque utilizou a ferramenta de força bruta \emph{hydra}, a qual utiliza uma lista
+	de senhas para atacar um determinado servidor SSH com um determinado nome de
+	usuário ou uma lista deles. Neste caso, utilizamos o usuário \emph{root}, na porta 22,
 	com a lista de senhas e o endereço do servidor.
 
 	\begin{framed}
 		hydra -s 22 -v -l root -P /home/teslla/Downloads/tech.lst -t 10 192.168.0.18 ssh
 	\end{framed}
 
-	Este comando foi aplicado no atacante, que iniciou os ataques. Logo o servidor
-	começou a identificar os pacotes maliciosos, vistos na figura \ref{fig:ssh_vitima}.
+	Este comando foi aplicado no atacante, que iniciou os ataques. Logo, o servidor
+	começou a identificar os pacotes maliciosos vistos na figura \ref{fig:ssh_vitima}.
 
 	\begin{figure}[h]
 		\centering
@@ -209,6 +209,6 @@ O servidor com o Snort instalado observa a varredura feita na rede pelo atacante
 		\label{fig:ssh_vitima}
 	\end{figure}
 	\newpage
- 	Quando o servidor percebeu que se tratava de um ataque brute force, este bloqueou
-	o tráfico advindo do atacante e o hydra ficou travado. Exemplificando o serviço
-	do IPS disponível no Security Onion.
+ 	Quando o servidor percebeu que se tratava de um ataque \emph{brute force}, este bloqueou
+	o tráfico advindo do atacante e o \emph{hydra} ficou travado. Exemplificando o serviço
+	do IPS disponível no sistema operacional Security Onion.
