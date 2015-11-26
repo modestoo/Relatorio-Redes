@@ -1,38 +1,43 @@
 \chapter{Sistema de Detecção de Intrusões}
 \label{chap:IDS}
 
-	Com o avanço dos computadores e tecnologias que o perpetuam, uma gama de benefícios para os usuários destas tecnologias foi evidenciadas. No entanto, paralelo a isso, o mundo cibernético torna-se cada vez mais perigoso, uma vez que este avanço proporciona também o aumento de ataques a redes de computadores. No entanto, previnir-se ainda não é suficiente, pois o número de ataques e sua complexidade tendem a crescer além das ferramentas utilizadas para tais ataques ficaram cada vez mais automatizadas.
+	Com o avanço das tecnologias voltada para as redes de computadores, uma gama de benefícios para os usuários foram evidenciadas. No entanto, paralelo a esse avanço, o mundo cibernético torna-se cada vez mais perigoso, uma vez que ele proporciona também o aumento de ataques a redes de computadores. No entanto, previnir-se ainda não é suficiente, pois o número de ataques e sua complexidade tendem a crescer. Além disso, as ferramentas utilizadas para tais ataques tornam-se cada vez mais automatizadas.
 
-	Então, uma grande necessidade surge: como garantir um comportamento livres de vulnerabilidade, falhas e ataques?
+	Então, uma grande necessidade emerge: como garantir um comportamento na rede livre de vulnerabilidades, falhas e ataques?
 
-	Neste contexto, surge no início dos anos 80 os primeiros conceitos de métodos de detecção de instruções no qual ganha espaço ao longo dos anos seguintes.
+	Neste contexto, surge no início dos anos 80 os primeiros conceitos de métodos de detecção de intrusões no qual ganha espaço ao longo dos anos seguintes.
 
-	Podemos definir que um IDS (\textit{Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar tais intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Ferramentas IDS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos \cite{Comunidade_Snort_Brasil}.
+	Pode-se definir IDS (\textit{Intrusion Detection System}) como um sistema de detecção de intrusão suficientemente inteligente para, além de detectar intrusões, bloquear ataques baseando-se em configurações e regras que definem possíveis ataques. Já o IPS (\textit{Intrusion Prevention Systems }), similar ao IDS, monitora a rede. No entanto, diferente do IDS, duas caracteristicas são apresentadas adicionalmente:
+	\\- O posicionamento de corte na rede do IPS e não apenas à escuta na rede para o IDS;
+	\\- A possibilidade de bloquear imediatamente as intrusões e independentemente do tipo de protocolo de transporte utilizado e sem reconfiguração de um equipamento terceiro, o que induz que o IPS é constituído em como nativo numa técnica de filtragem de pacotes e meios de bloqueio. \cite{Kioskea}
 
-	\section{Tipos de IDS}
+	Ferramentas IDS/IPS colaboram para que ataques à segurança de hosts e redes sejam prevenidos ou tratados de alguma forma, mesmo que apenas pela emissão de um alerta, antes que grandes danos sejam causados pelos mesmos \cite{Comunidade_Snort_Brasil}.
+
+	
+	\section{Tipos de IDS/IPS}
 	\label{sec:IDS_Tipos}
 
-	As ferramentas de IDS existentes possuem implementação baseada em características funcionais que permitem a classificação destes mecanismos de detecção de intrusão de acordo com tais funcionalidades. Assim, de acordo com Morais (2011), os tipos de IDS existentes podem ser classificados, dentre outras características, por:
+	As ferramentas de IDS/IPS existentes possuem implementação baseada em características funcionais que permitem a classificação destes mecanismos de detecção de intrusão de acordo com tais funcionalidades. Assim, de acordo com \cite{Morais}, os tipos de IDS/IPS existentes podem ser classificados, dentre outras características, por:
 		\begin{itemize}
 			\item \textbf{Fonte de Eventos} - podem detectar intrusos com referência aos padrões determinados para pacotes tramitados na rede (\textit{network based}) ou através do monitoramento de diversas variáveis de um \textit{host}, tais como uso de software ou hardware (\textit{host based}).
 	
 			\item \textbf{Método de detecção} - pode ser realizada com base em conhecimento de assinaturas, padrões de ataques já conhecidos. Ainda pode ser baseada em comportamento, permitindo que ataques desconhecidos sejam detectados, uma vez que comportamentos anormais podem representar que um intruso está prestes a atacar o sistema.	
 		\end{itemize}
 
-	\section{Relação IDS e Firewall}
+	\section{Relação IDS/IPS e Firewall}
 	\label{sec:IDS_Firewall}
 
-	Um Firewall é um sistema de monitoramento de redes utilizado para filtrar pacotes que são transmitidos . Ele é geralmente instalado entre uma rede interna de uma organização e o restante da rede. O firewall pode conceder ou negar acesso de acordo com os critérios estabelecidos previamente \cite{Morais}, porém ele não é capaz de enviar alertas quando detecta anomalias na rede, também não consegue deter um tráfego caso não passe por ele, para obter esses serviços é necessário o uso de um IDS. O IDS por meio de padrões irá detectar em tempo real uma gama de ataques. Enquanto um Firewall age como uma parede entre entre uma rede interna e externa, o IDS consegue identificar ataques internos a rede.
+	Um Firewall é um sistema de monitoramento de redes utilizado para filtrar pacotes que são transmitidos . Ele é geralmente instalado entre uma rede interna de uma organização e o restante da rede. O firewall pode conceder ou negar acesso de acordo com os critérios estabelecidos previamente \cite{Morais}, porém ele não é capaz de enviar alertas quando detecta anomalias na rede, também não consegue deter um tráfego caso não passe por ele, para obter esses serviços é necessário o uso de um IDS/IPS. O IDS/IPS por meio de padrões irá detectar em tempo real uma gama de ataques. Enquanto um Firewall age como uma parede entre entre uma rede interna e externa, o IDS/IPS consegue identificar ataques internos a rede.
 
-	\section{Vantagens e Limitações do IDS}
+	\section{Vantagens e Limitações do IDS/IPS}
 	\label{sec:IDS_VeL}
 
-	As ferramentas de detecção de intrusos apresentam vantagens e limitações a depender do tipo de implementação da mesma. Os detectores de intrusos implementados em uma rede, que é o foco do presente trabalho, são capazes de serem invisíveis aos atacantes e monitorar uma rede de grande porte quando implantado no local adequado da rede e configurado com regras eficientes para que ações corretas sejam realizadas em reação aos ataques previstos \cite{Comunidade_Snort_Brasil}.
-	A implementação de ferramentas IDS em \textit{host} apresenta como vantagem a identificação de ataques que não podem ser detectados a nível de rede, uma vez que pacotes que são trafegados pela rede podem ser criptografados, mascarando um ataque. Exemplos de ataques que podem ocorrer a um \textit{host} e que pode não ser identificado por um IDS implementado na rede são aqueles realizados por \textit{Trojan Horses}, já que tais ameaças apresentam-se como parte de um tráfego de dados qualquer que é trocado entre \textit{hosts} \cite{Comunidade_Snort_Brasil}.
+	As ferramentas de detecção de intrusos apresentam vantagens e limitações a depender do tipo de implementação da mesma. Os detectores de intrusos implementados em uma rede, que é o foco do presente trabalho, são capazes de ser invisíveis aos atacantes e monitorar uma rede de grande porte quando implantado no local adequado da rede e configurado com regras eficientes para que ações corretas sejam realizadas em reação aos ataques previstos \cite{Comunidade_Snort_Brasil}.
+	A implementação de ferramentas IDS/IPS em \textit{host} apresenta como vantagem a identificação de ataques que não podem ser detectados a nível de rede, uma vez que pacotes que são trafegados pela rede podem ser criptografados, mascarando um ataque. Exemplos de ataques que podem ocorrer a um \textit{host} e que pode não ser identificado por um IDS/IPS implementado na rede são aqueles realizados por \textit{Trojan Horses}, já que tais ameaças apresentam-se como parte de um tráfego de dados qualquer que é trocado entre \textit{hosts} \cite{Comunidade_Snort_Brasil}.
 		
-	Qualquer sistema IDS apresenta limitações que pode afetar a infra-estrutura da rede onde estão implantadas. Desta forma, a estrutura da rede e recursos limitados podem se tornar um obstáculo ao uso de todos os poderes da ferramenta de IDS que, caso não seja configurada adequadamente, está fadada a exposição à possíveis ataques do tipo DoS (\textit{Deny of Service}). Estas limitações, dentro de uma rede organizacional onde dados confidenciais estão armazenados e são tramitados pela rede, podem facilitar um ataque capaz de gerar falsos positivos que exigem esforços enormes para serem identificados \cite{Morais}.
+	Qualquer sistema IDS/IPS apresenta limitações que pode afetar a infra-estrutura da rede onde estão implantadas. Desta forma, a estrutura da rede e recursos limitados podem se tornar um obstáculo ao uso de todos os poderes da ferramenta de IDS/IPS que, caso não seja configurada adequadamente, está fadada a exposição à possíveis ataques do tipo DoS (\textit{Deny of Service}). Estas limitações, dentro de uma rede organizacional onde dados confidenciais estão armazenados e são tramitados pela rede, podem facilitar um ataque capaz de gerar falsos positivos que exigem esforços enormes para serem identificados \cite{Morais}.
 
-	\section{Levantamento das Ferramentas IDS}
+	\section{Levantamento das Ferramentas IDS/IPS}
 	\label{sec:IDS_Ferramentas}
 	
 
@@ -43,7 +48,7 @@
 				\item \textbf{Suricata} - Outra ferramenta de detecção de intrusos na rede baseada em assinaturas. Tem suporte nativo a operações \textit{multithread}, o que é sua principal vantagem em relação ao Snort \cite{Albin}. 
 				\item \textbf{Snorby} - É uma ferramenta no qual auxilia Snort em suas funcionalidades, isto é, ela disponibiliza alguns gráficos e estátisticas dos alertas coletados pelo Snort. Além disso, possui uma interface simples e de fácil utilização. 
 				\item \textbf{Bro NIDS} - Um NIDS baseado em anomalias na rede. Geralmente utilizado para conduzir investigações forense.
-				\item \textbf{Smoorth} - É a união de três grandes ferramentas de IPS/IDS, Snort, Suricata e Barnyard2. Sendo uma ferramenta muito poderosa, no entanto, possui um pequeno grau de complexidade para usuário iniciantes da ferramenta.
+				\item \textbf{Smoorth} - É a união de três grandes ferramentas de IDS/IPS, Snort, Suricata e Barnyard2. Sendo uma ferramenta muito poderosa, no entanto, possui um pequeno grau de complexidade para usuário iniciantes da ferramenta.
 			\end{itemize}
 
 		

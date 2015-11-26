@@ -1,7 +1,7 @@
 \chapter{Arquitetura Estabelecida}
 \label{chap:Arquitetura}
 
-	Está seção tem como foco detalhar a infraestrutura, isto é, a arquitetura física e lógica estabelecida para desenvolvimento deste projeto. Aqui serão apresentados os componentes da redes e seus especificações técnicas, além de indicar informações de como replicar o ambiente de teste definido.
+	Esta seção tem como foco detalhar a infraestrutura, isto é, a arquitetura física e lógica estabelecida para desenvolvimento deste projeto. Aqui serão apresentados os componentes da redes e seus especificações técnicas, além de indicar informações de como replicar o ambiente de teste definido.
 
 	\section{Componentes da Arquitetura}
 	\label{sec:Arquitetura_Componentes}
@@ -9,7 +9,7 @@
 		Para montar a infraestrutura necessário para o projeto, utilizou-se de 4 componentes. Cada componente com um papel e serviço específico. Além disso, metade deles são máquina virtuais instânciadas pelo software \emph{VMware}. A seguir, são elencados os componentes e suas respectivas caracteristicas:
 
 		\begin{itemize}
-			\item \textbf{Cliente Comum} - IP: \emph{192.168.0.12} - Trata-se da máquina que fará as requisições de aplicações ao servidor principais da rede. Nenhuma ferramenta específica para será utilizada nela, apenas um navegador para as solicitações das requisições.
+			\item \textbf{Cliente Comum} - IP: \emph{192.168.0.12} - Trata-se da máquina que fará as requisições de aplicações ao servidor principais da rede. Nenhuma ferramenta específica será utilizada nela, apenas um navegador para as solicitações das requisições.
 
 			\textbf{- Características:} \\
 			\textbf{Sistemas Operacional:} Linux Mint 17.2 - 64 bits; \\
@@ -20,7 +20,7 @@
 			\textbf{Ferramentas Instaladas:} Google Chrome V.46.0; \\
 			\textbf{É uma máquina virtual?} Sim; \\
 
-			\item \textbf{Cliente Malicioso} - IP: \emph{192.168.0.13} - Trata-se da máquina que fará os ataques a rede. Neste caso, este componente sempre tentará atacar o servidor principal, tentando na maioria das vezes derruba-lo. Para esta máquinas utilizou-se um sistema operacional específico para auditorias e segurança de computadores \cite{kali}. Todas as ferramentas utilizadas para os ataques são nativas ao sistema operacional.
+			\item \textbf{Cliente Malicioso} - IP: \emph{192.168.0.13} - Trata-se da máquina que fará os ataques a rede. Neste caso, este componente sempre executará ataques ao servidor principal, tentando alguma das vezes derrubá-lo. Para esta máquinas utilizou-se um sistema operacional específico para auditorias e segurança de computadores \cite{kali}. Todas as ferramentas utilizadas para os ataques são nativas ao sistema operacional.
 
 			\textbf{- Características:} \\
 			\textbf{Sistemas Operacional:} Kali Linux 2.0 - 64 bits; \\
@@ -38,7 +38,7 @@
 			\textbf{Processador:} Intel i3 1.9GHz; \\
 			\textbf{Memória RAM:} 4 Gbs; \\
 			\textbf{Espaço para Armazenamento:} 150 Gbs; \\
-			\textbf{Adaptador de Rede:} Wi-Fi; \\
+			\textbf{Adaptador de Rede:} Cabo par trançado; \\
 			\textbf{Ferramentas Instaladas:} Snort e Snorby; \\
 			\textbf{É uma máquina virtual?} Não; \\
 
@@ -49,7 +49,7 @@
 			\textbf{Processador:} Intel i3 1.9GHz; \\
 			\textbf{Memória RAM:} 4 Gbs; \\
 			\textbf{Espaço para Armazenamento:} 150 Gbs; \\
-			\textbf{Adaptador de Rede:} Wi-Fi; \\
+			\textbf{Adaptador de Rede:} Cabo par trançado; \\
 			\textbf{Ferramentas Instaladas:} Apache, vsftpd, Open SSH; \\
 			\textbf{É uma máquina virtual?} Sim; \\
 
@@ -77,7 +77,7 @@
 
 		Neste tópico são apresentados os procedimentos para instalação das principais ferramentas utilizadas. Algumas ferramentas utilizadas são nativas de determinados sistemas operacionais, no entanto, apresentam-se pequenos tutoriais de como instalar cada uma das ferramentas. Na primeira subseção são apresentados os sistemas operacionais utilizados e na segunda subção as principais ferramentas.
 
-		Ressalta-se ainda a utilização de um sistema operacional baseado no Unix, assumindo-se o Ubuntu 14.04 como sistema base para as instalações. Além disso, evitou-se ao máximo trazer tutoriais de configurações de ferramentas para este relatório a fim de não sobrecarrega-lo com uma série de comando de configuração, uma vez que algumas dessas ferramentas rapidamente tornou-se obsoletas. No entanto, em todos as ferramentas que forem necessárias configurações específicas, foram apresentados os respectivos \emph{links} utilizados para tais configurações.
+		Ressalta-se ainda a utilização de um sistema operacional baseado no Unix, assumindo-se o Ubuntu 14.04 como sistema base para as instalações. Além disso, evitou-se ao máximo trazer tutoriais de configurações de ferramentas para este relatório a fim de não sobrecarregá-lo com uma série de comando de configuração, uma vez que algumas dessas ferramentas rapidamente tornou-se obsoletas. No entanto, em todos as ferramentas que foram necessárias configurações específicas, apresentam-se os respectivos \emph{links} utilizados para realizar tais configurações.
 
 		\subsection{Sistemas Operacionais Utilizados}
 		\label{sec:Arquitetura_Componentes_SOU}
@@ -248,10 +248,10 @@
 			computadores pela inteface eth0.
 
 		\subsection{Execução dos Ataques}
-			A execução dos ataques foi um ponto complexo, pois, apesar se simples, exige
-			uma quantidade de conhecimento considerável para entender o processo que
-			estava sendo execudado no backend, a fim de testar as regras no sistema
-			de detecção e prevenção de intrusos.
+			Efetuar os ataques foi um ponto complexo, pois, apesar dos ataques serem relativamente simples, para sua execução exige
+			uma quantidade de conhecimento considerável, pois era necessário entender o processo que
+			estava sendo executado no \emph{backend}, a fim de testar as regras no sistema
+			de detecção e prevenção de intrusões.
 
 			Para testar as regras, era necessário conhecer sobre os dados trafegantes
 			ao identificar as recorrências.
